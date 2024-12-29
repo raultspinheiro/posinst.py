@@ -3,7 +3,7 @@ from time import sleep
 from colorama import Fore, Style
 
 
-DOWNLOADS_FOLDER = "${HOME}/posinstfiles/"
+DOWNLOADS_FOLDER = "${HOME}/posinstfiles"
 CHROME_LINK = (
     "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 )
@@ -68,7 +68,7 @@ def chrome_install():
         run_command("sudo apt install wget")
         print(Fore.CYAN + "Downloading chrome .deb file..." + Style.RESET_ALL)
         run_command(f"wget {CHROME_LINK} -c -P {DOWNLOADS_FOLDER} ")
-        run_command(f"sudo apt -f {DOWNLOADS_FOLDER}/google-chrome*.deb")
+        run_command(f"sudo apt install -f {DOWNLOADS_FOLDER}/google-chrome*.deb")
     else:
         print("Skipping chrome installation...")
         sleep(0.6)
